@@ -38,7 +38,24 @@ they must include all the dependencies they need. However, you must avoid the
 problem of double inclusion by adding include guards. Otherwise, your grade will
 be 0.*/
 
+
+#include <iostream>
+#include <cctype> //why would I need this??
+#include <cstring>
+
 int main(int argc, char **argv)
 {
-    if ()
+	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else if (argc > 1)
+	{
+		for (int i = 1; i < argc; i++)
+		{
+			for (int j = 0; argv[i][j]; j++)
+				std::cout << (char)std::toupper(argv[i][j]);
+		}
+	}
+	std::cout << std::endl;
+	return (0);
 }
+//std is the standar library I use that from here

@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:49:26 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/24 22:58:15 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:02:07 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #include <iomanip>
 #include <ctime>
 
-// Init all the start-values
+// Init all the start-values //this one do with the const!!!
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;

@@ -18,7 +18,6 @@ enum Fields {
 
 class Contact {
 	private:
-		static std::string _fields_name[5]; // Field names
     	std::string _info[5];
 		// std::string (_firstName);
 		// std::string (_lastName);
@@ -29,6 +28,7 @@ class Contact {
 	public:
 		Contact();
 		~Contact();
+		static std::string _fields_name[5];
 		void	setContact();
 		void	getContact(int index);
 };

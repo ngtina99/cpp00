@@ -1,22 +1,27 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>
+# include <iostream>//library?
 # include <string>
 # include <fstream>
 # include <iomanip>
 # include <cstdlib>
 # include <string>
 
-//thinking on the libraries
+# include "Contact.hpp"
 
-class	PhoneBook {
+class	PhoneBook 
+{
 	private:
-		Contact	_contacts[8];
-		int _limit;
+		Contact	_contact[8];
+		int		_index;
+		int		_contactNumber;
 	public:
-		phoneBook();
-		Contact &getContact(int i);
-}
+		PhoneBook();
+		~PhoneBook();
+		void	setPhoneBook();
+		void	getPhoneBook();
+		void	quitPhoneBook();
+};
 
 #endif

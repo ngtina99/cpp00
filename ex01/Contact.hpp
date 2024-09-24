@@ -7,22 +7,30 @@
 # include <iomanip>
 # include <cstdlib>
 # include <string>
-# include "PhoneBook.hpp"
+
+enum Fields {
+    FirstName = 0,
+    LastName,
+    Nickname,
+    PhoneNumber,
+    DarkestSecret
+};
 
 class Contact {
 	private:
-		std::string (_firstName);
-		std::string (_lastName);
-		std::string (_nickName);
-		std::string (_phoneNumber);
-		std::string (_darkestSecret);
-//can not have empty fields
+		static std::string _fields_name[5]; // Field names
+    	std::string _informations[5];
+		// std::string (_firstName);
+		// std::string (_lastName);
+		// std::string (_nickName);
+		// std::string (_phoneNumber);
+		// std::string (_darkestSecret);
+//can not have empty fields make a protection for that 
 	public:
-	std::string getFirstName(){
-		return _firstName;
-	}
-
-//
+		Contact();
+		~Contact();
+		void	setContact();
+		//void	getContact();
 };
 
 #endif

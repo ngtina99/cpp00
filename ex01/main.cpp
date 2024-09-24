@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-
-
 /*This second exercise is a bit more fun. We have to simulate a phonebook with a terminal interactive UI. We can ADD or SEARCH for contacts, 
 and we can also EXIT, clearing the list of contacts and ending the program. The phonebook can receive up to 8 contacts, 
 such that the 9th contact will replace the 1st contact, the 10th will replace the 2nd, and so on.*/
@@ -40,34 +37,25 @@ such that the 9th contact will replace the 1st contact, the 10th will replace th
 // 	this->_limit = false;
 // }
 
+#include "PhoneBook.hpp"
 
 int	main()
 {
-	std::string(command);
+	PhoneBook	phoneBook;
+	std::string	command; //Use the first form when you need a temporary string for immediate use.
+
 	while (1)
 	{
 		std::cout << "Enter a command: ";
 		std::getline(std::cin, command);
-		cpp
-Copy code
-command.erase(0, command.find_first_not_of(" \t\v\f\r"));
-is used to trim leading whitespace characters from the command string. Let's break it down:
-1. command.find_first_not_of(" \t\v\f\r")
-This function call searches the command string to find the first character that is not in the set of whitespace characters " \t\v\f\r".
-" \t\v\f\r" is a string that contains several whitespace characters:
-" ": Space
-"\t": Horizontal tab
-"\v": Vertical tab
-"\f": Form feed
-"\r": Carriage return
-		if (std::cin.eof() == true)
-		{
-			std::cout << "You Pressed ^D. Exiting phonebook now." << std::endl;
-			exit(0);
-		}
-		if(command = "EXIT")
+		
+		phoneBook.quitPhoneBook();
+		if (command == "EXIT")
 			break ;
 		else if (command == "ADD")
+			phoneBook.setPhoneBook();
 		else if (command == "SEARCH")
+			phoneBook.getPhoneBook();
 	}
+	return (0);
 }

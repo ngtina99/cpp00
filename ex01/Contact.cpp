@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:40:33 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/24 22:21:09 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:45:03 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,33 @@ std::string Contact::_fields_name[5] =
 void	Contact::setContact()
 {
 	std::string input;
+
 	for (int i = FirstName; i <= DarkestSecret; i++)
 	{
-		std::cout << "Please enter the " << Contact::_fields_name[i] << "\n";
+		std::cout << "Please enter the> " << Contact::_fields_name[i];
 		std::getline(std::cin, input);
-		PhoneBook::quitPhoneBook();
-		if (this->_informations[i].length() == 0)
+		//PhoneBook::quitPhoneBook(); SOLVE OUT LATER
+		if (input.length() == 0)
 		{
 			std::cout << "Empty contact information not allowed.\n";
 			i--;
 		}
+		else//BEFORE PUT CHECK IF IT IS NUMBER AND ELSE
+			this->_info[i] = input;
 	}
 	std::cout << "Contact added\n";
 }
 
-// void	Contact::getContact(int index)
-// {
-// 	std::cout << "|" << std::setw(10) << index;
-// 	for (int i = FirstName; i <= NickName; i++)
-// 	{
-// 		std::cout << "|";
-// 		if (this->_informations[i].length() > 10)
-// 			std::cout << this->_informations[i].substr(0, 9) << ".";
-// 		else
-// 			std::cout << std::setw(10) << this->_informations[i];
-// 	}
-// 	std::cout << "|" << std::endl;
-// }
+void	Contact::getContact(int index)
+{
+	std::cout << "|" << std::setw(10) << index;
+	for (int i = FirstName; i <= NickName; i++)
+	{
+		std::cout << "|";
+		if (this->_info[i].length() > 10)
+			std::cout << this->_info[i].substr(0, 9) << ".";
+		else
+			std::cout << std::setw(10) << this->_info[i];
+	}
+	std::cout << "|" << std::endl;
+}

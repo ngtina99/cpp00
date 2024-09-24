@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:39:50 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/24 22:20:29 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:44:02 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	PhoneBook::setPhoneBook()
 	this->_contact[this->_index].setContact();
 	this->_index++;
 	this->_contactNumber++;
-	if(this->_index == 7)
+	if(this->_index == 8)
 		this->_index = 0;
 }
-void	PhoneBook::getPhoneBook()
+void	PhoneBook::getPhoneBook()// TEST
 {
 	std::string	input;
 	int	inputNumber = 0;
@@ -54,7 +54,7 @@ void	PhoneBook::getPhoneBook()
 		std::cout << "Enter a contact number: ";
 		std::getline(std::cin, input);
 		PhoneBook::quitPhoneBook();
-		inputNumber = atoi(input.c_str());
+		inputNumber = atoi(input.c_str());//something against this 8.0 and stuff
 		if (inputNumber > this->_contactNumber)
 			std::cout << "There is no contact #" << inputNumber << '\n';
 		else if (inputNumber >= 1 && inputNumber <= 8)
@@ -62,7 +62,7 @@ void	PhoneBook::getPhoneBook()
 			std::cout << "|-------------------------------------------|" << std::endl;
 			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 			std::cout << "|----------|----------|----------|----------|" << std::endl;
-			//this->_contact[inputNumber - 1].getContact();
+			this->_contact[inputNumber - 1].getContact(inputNumber);
 			std::cout << "|-------------------------------------------|" << std::endl;
 		}
 		else

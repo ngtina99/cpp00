@@ -11,7 +11,7 @@
 enum Fields {
     FirstName = 0,
     LastName,
-    Nickname,
+    NickName,
     PhoneNumber,
     DarkestSecret
 };
@@ -19,7 +19,7 @@ enum Fields {
 class Contact {
 	private:
 		static std::string _fields_name[5]; // Field names
-    	std::string _informations[5];
+    	std::string _info[5];
 		// std::string (_firstName);
 		// std::string (_lastName);
 		// std::string (_nickName);
@@ -30,7 +30,7 @@ class Contact {
 		Contact();
 		~Contact();
 		void	setContact();
-		//void	getContact();
+		void	getContact(int index);
 };
 
 #endif

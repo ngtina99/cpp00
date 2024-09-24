@@ -1,7 +1,7 @@
 NAME = megaphone
 
 SRC = megaphone.cpp
-OBJ = $(SRC:.cpp = .o)
+OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 RM = rm -f
@@ -15,6 +15,7 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
+
 fclean: clean
 	$(RM) $(NAME)
 

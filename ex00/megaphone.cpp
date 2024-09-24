@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*However, you can’t use any other external library. It means C++11 (and derived
+/*It means C++11 (and derived
 forms) and Boost libraries are forbidden. The following functions are forbidden
-too: *printf(), *alloc() and free(). If you use them, your grade will be 0 and
-that’s it.
+too: *printf(), *alloc() and free().
 */
-
 
 #include <iostream>
 #include <cctype>
@@ -36,4 +34,3 @@ int main(int argc, char **argv)
 	std::cout << '\n';
 	return (0);
 }
-//std is the standar library I use that from here

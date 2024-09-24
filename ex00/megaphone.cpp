@@ -10,19 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The Goal of this exercise was to write a really simple c++ style programm, but without any classes yet, just to get familiar with the use of i.e. std::cout.
-
-You can compile this project with make, make all or make re.
-Then use it with ./megaphone "Argument_you_want_to_change_to_all_CAPS"
-
-This first exercise is quite simple, we are asked to create a program that takes arguments and prints them back to the terminal in capital letters. If no arguments are provided the program will print out a default message, also in captial letters.*/
-
-/*ClassName.hpp/ClassName.h, ClassName.cpp, or ClassName.tpp. Then, if you
-have a header file containing the definition of a class "BrickWall" standing for a
-brick wall, its name will be BrickWall.hpp.
-• Unless specified otherwise, every output messages must be ended by a new-line
-character and displayed to the standard output.*/
-
 /*However, you can’t use any other external library. It means C++11 (and derived
 forms) and Boost libraries are forbidden. The following functions are forbidden
 too: *printf(), *alloc() and free(). If you use them, your grade will be 0 and

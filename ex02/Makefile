@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = account
 
-SRC = megaphone.cpp
+SRC = tests.cpp Account.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++

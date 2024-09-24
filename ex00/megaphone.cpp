@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 				std::cout << (char)std::toupper(argv[i][j]);
 		}
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 	return (0);
 }
 //std is the standar library I use that from here

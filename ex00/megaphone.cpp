@@ -18,38 +18,22 @@ that’s it.
 
 
 #include <iostream>
-#include <cctype> //why would I need this??
+#include <cctype>
 #include <cstring>
 
-// int main(int argc, char **argv)
-// {
-// 	if (argc == 1)
-// 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-// 	else if (argc > 1)
-// 	{
-// 		for (int i = 1; i < argc; i++)
-// 		{
-// 			for (int j = 0; argv[i][j]; j++)
-// 				std::cout << (char)std::toupper(argv[i][j]);
-// 		}
-// 	}
-// 	std::cout << '\n';
-// 	return (0);
-// }
-// //std is the standar library I use that from here
-
-
-int main()
+int main(int argc, char **argv)
 {
-    std::cout << "Enter two numbers: ";
-
-    int x{};
-    std::cin >> x;
-
-    int y{};
-    std::cin >> y;
-
-    std::cout << "You entered " << x << " and " << y << '\n';
-
-    return 0;
+	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else if (argc > 1)
+	{
+		for (int i = 1; i < argc; i++)
+		{
+			for (int j = 0; argv[i][j]; j++)
+				std::cout << (char)std::toupper(argv[i][j]);
+		}
+	}
+	std::cout << '\n';
+	return (0);
 }
+//std is the standar library I use that from here

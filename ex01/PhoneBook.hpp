@@ -22,7 +22,7 @@ class	PhoneBook
 		void	setPhoneBook();
 		void	getPhoneBook();
 		void	quitPhoneBook();
-		int	check_args(std::string &argv);
+		int		checkInput(std::string &argv);
 };
 
 #endif

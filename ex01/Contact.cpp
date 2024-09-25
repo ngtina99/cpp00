@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:40:33 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/25 23:10:45 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/25 23:51:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,42 @@ Contact::~Contact()
 	return ;
 }
 
+void	Contact::quitContact()
+{
+	if (std::cin.eof())
+	{
+		std::cout << "\n*End of input*\n";
+		exit (0);
+	}
+}
+
 std::string Contact::_title[5] = 
 {
-    "First Name",
-    "Last Name",
-    "Nick Name",
-    "Phone Number",
-    "Darkest Secret"
+	"first name",
+	"last name",
+	"nickname",
+	"phone number",
+	"darkest secret"
 };
 
 void	Contact::setContact()
 {
-	std::string input;
+	std::string	input;
 
 	for (int i = firstName; i <= darkestSecret; i++)
 	{
-		//if()
-		std::cout << "Enter > " << Contact::_title[i];
+		std::cout << BLUE << "Enter " << Contact::_title[i] << ": " << EOC;
 		std::getline(std::cin, input);
-		//PhoneBook::quitPhoneBook(); SOLVE OUT LATER
-		if (input.length() == 0)
+		Contact::quitContact();
+		if (!input.length())
 		{
-			std::cout << "the contact can’t have empty field\n";
+			std::cout << RED << "the contact can’t have empty field\n" << EOC;
 			i--;
 		}
-		else//BEFORE PUT CHECK IF IT IS NUMBER AND ELSE
+		else
 			this->_info[i] = input;
 	}
-	std::cout << "Contact added!\n";
+	std::cout << GREEN << "Contact added!\n" << EOC;
 }
 
 void	Contact::getContact(int index)
@@ -59,9 +67,9 @@ void	Contact::getContact(int index)
 	{
 		std::cout << "|";
 		if (this->_info[i].length() > 10)
-			std::cout << this->_info[i].substr(0, 9) << ".";
+			std::cout << BLUE << this->_info[i].substr(0, 9) << "." << EOC;
 		else
-			std::cout << std::setw(10) << this->_info[i];
+			std::cout << BLUE << std::setw(10) << this->_info[i] << EOC;
 	}
 	std::cout << "|" << std::endl;
 }

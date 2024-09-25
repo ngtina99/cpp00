@@ -42,7 +42,6 @@ int	main()
 	{
 		std::cout << "Enter command: ";
 		std::getline(std::cin, command);
-		
 		phoneBook.quitPhoneBook();
 		if (command == "EXIT")
 			break ;
@@ -50,6 +49,8 @@ int	main()
 			phoneBook.setPhoneBook();
 		else if (command == "SEARCH")
 			phoneBook.getPhoneBook();
+		else
+			std::cout << BLUE << "Use command: ADD, SEARCH or EXIT\n" << EOC;
 	}
 	return (0);
 }

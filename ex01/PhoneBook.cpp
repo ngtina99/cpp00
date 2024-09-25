@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:39:50 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/25 23:09:53 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/25 23:47:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	PhoneBook::setPhoneBook()
 		this->_index = 0;
 }
 
-int	PhoneBook::check_args(std::string &argv)
+int	PhoneBook::checkInput(std::string &argv)
 {
 	int	i;
 	int	len;
@@ -67,20 +67,20 @@ void	PhoneBook::getPhoneBook()
 	int	inputNumber = 0;
 
 	if (this->_contactNumber == 0)
-		std::cout << "The phonebook is empty\n";
+		std::cout << RED << "The phonebook is empty\n" << EOC;
 	else
 	{
-		std::cout << "Enter contact number (1-8): ";
+		std::cout << BLUE << "Enter a contact number (1-8): " << EOC;
 		std::getline(std::cin, input);
 		PhoneBook::quitPhoneBook();
-		if(PhoneBook:: check_args(input))
+		if(PhoneBook:: checkInput(input) || !input.length())
 		{
-			std::cout << "The number is invalid\n";
+			std::cout << RED << "the input is invalid\n" << EOC;
 			return ;
 		}
 		inputNumber = atoi(input.c_str());
 		if (inputNumber > this->_contactNumber)
-			std::cout << "There is no contact #" << inputNumber << '\n';
+			std::cout << RED << "there is no contact #" << inputNumber << '\n' << EOC;
 		else if (inputNumber >= 1 && inputNumber <= 8)
 		{
 			std::cout << "|-------------------------------------------|" << std::endl;
@@ -90,6 +90,6 @@ void	PhoneBook::getPhoneBook()
 			std::cout << "|-------------------------------------------|" << std::endl;
 		}
 		else
-			std::cout << "The number is out of the range\n";
+			std::cout << RED << "The number is out of the range\n" << EOC;
 	}
 }

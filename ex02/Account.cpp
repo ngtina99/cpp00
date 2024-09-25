@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 22:49:26 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/26 00:30:21 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/26 00:42:21 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/26 00:46:55 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,58 +41,43 @@ Account::~Account()
 	"closed" << std::endl;
 }
 
-// getter for the total number of accounts
-int	Account::getNbAccounts( void )
+int	Account::getNbAccounts()
 {
 	return (Account::_nbAccounts);
 }
 
-// getter for the total amoount of money of all accounts
-int	Account::getTotalAmount( void )
+int	Account::getTotalAmount()
 {
 	return (Account::_totalAmount);
 }
 
-// getter for the total number of deposits
-int	Account::getNbDeposits( void )
+int	Account::getNbDeposits()
 {
 	return (Account::_totalNbDeposits);
 }
 
-// getter for the total number of withdrawals
-int	Account::getNbWithdrawals( void )
+int	Account::getNbWithdrawals()
 {
 	return (Account::_totalNbWithdrawals);
 }
 
-// getter to display all the accounts infos
-void	Account::displayAccountsInfos( void )
+void	Account::displayAccountsInfos()
 {
 	_displayTimestamp();
-	std::cout <<
-	"accounts:" << getNbAccounts() << ";" <<
-	"total:" << getTotalAmount() << ";" <<
-	"deposits:" << getNbDeposits() << ";" <<
-	"withdrawals:" << getNbWithdrawals() <<
-	std::endl;
+	std::cout << "accounts:" << getNbAccounts() << ";" << "total:" << getTotalAmount() << ";" <<
+	"deposits:" << getNbDeposits() << ";" << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
 // makes a deposit
 void	Account::makeDeposit( int deposit )
 {
 	_displayTimestamp();
-	std::cout <<
-	"index:" << this->_accountIndex << ";" <<
-	"p_amount:" << this->checkAmount() << ";" <<
-	"deposit:" << deposit << ";";
+	std::cout << "index:" << this->_accountIndex << ";" << "p_amount:" << this->checkAmount() << ";" << "deposit:" << deposit << ";";
 	this->_amount += deposit;
 	this->_nbDeposits++;
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
-	std::cout <<
-	"amount:" << this->checkAmount() << ";" <<
-	"nb_deposits:" << this->_nbDeposits <<
-	std::endl;
+	std::cout << "amount:" << this->checkAmount() << ";" << "nb_deposits:" << this->_nbDeposits << std::endl;
 }
 
 // makes a withdraw, returns true if successfull, false if not

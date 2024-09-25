@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*It means C++11 (and derived
-forms) and Boost libraries are forbidden. The following functions are forbidden
-too: *printf(), *alloc() and free().
-*/
-
 #include <iostream>
 #include <cctype>
 #include <cstring>

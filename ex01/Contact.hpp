@@ -22,15 +22,20 @@ enum Fields {
 };
 
 class Contact {
-	private:
-		std::string 		_info[5];
-		static std::string	_title[5];
+
 	public:
+
 		Contact();
 		~Contact();
 		void	quitContact();
 		void	setContact();
 		void	getContact(int index);
+
+	private:
+
+		std::string 		_info[5];
+		static std::string	_title[5];
+
 };
 
 #endif

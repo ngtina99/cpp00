@@ -6,11 +6,20 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:40:33 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/25 23:51:08 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/26 00:38:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+std::string Contact::_title[5] = 
+{
+	"first name",
+	"last name",
+	"nickname",
+	"phone number",
+	"darkest secret"
+};
 
 Contact::Contact()
 {
@@ -30,15 +39,6 @@ void	Contact::quitContact()
 		exit (0);
 	}
 }
-
-std::string Contact::_title[5] = 
-{
-	"first name",
-	"last name",
-	"nickname",
-	"phone number",
-	"darkest secret"
-};
 
 void	Contact::setContact()
 {
@@ -71,5 +71,5 @@ void	Contact::getContact(int index)
 		else
 			std::cout << BLUE << std::setw(10) << this->_info[i] << EOC;
 	}
-	std::cout << "|" << std::endl;
+	std::cout << "|\n";
 }

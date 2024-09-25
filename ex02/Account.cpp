@@ -3,66 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:49:26 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/24 23:02:07 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/26 00:30:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// Your fellow developers give you a bunch of files. Compiling tests.cpp reveals that
-// the missing file is Account.cpp. Lucky you, the header file Account.hpp was saved.
-// There is also a log file. Maybe you could use it in order to understand how the Account
-// class was implemented.
-// except for the
-// timestamps which will obviously differ since the tests saved in the log file were run
-// before you were hired).
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 
-// Init all the start-values //this one do with the const!!!
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-// Empty constuctor, when called without input
-Account::Account() {}
-
-// Constructor with init deposit
-// after the creation a note about the created account is printed
-Account::Account(int initial_deposit)
+Account::Account()
 {
-// Init all the start-values of each account
-// and keep track of the number of accounts as well as the total ammount of money
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
-	this->_amount = initial_deposit;
-	Account::_totalAmount += this->_amount;
-	this->_accountIndex = Account::_nbAccounts;
-	Account::_nbAccounts++;
-
-// Printing note of the creation of the Account with its starting values and the state created
-	_displayTimestamp();
-	std::cout <<
-	"index:" << this->_accountIndex << ";" <<
-	"amount:" << this->checkAmount() << ";" <<
-	"created" <<
-	std::endl;
+	return;
 }
 
-// destructor that prints all the ending values as well as the state closed
-Account::~Account(void)
+Account::Account(int initial_deposit)
+	: _accountIndex(Account::_nbAccounts++), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
+{
+	Account::_totalAmount += this->_amount;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";" << "amount:" << this->checkAmount() << ";" <<
+	"created" << std::endl;
+}
+
+Account::~Account()
 {
 	_displayTimestamp();
-	std::cout <<
-	"index:" << this->_accountIndex << ";" <<
-	"amount:" << this->checkAmount() << ";" <<
-	"closed" <<
-	std::endl;
+	std::cout << "index:" << this->_accountIndex << ";" << "amount:" << this->checkAmount() << ";" <<
+	"closed" << std::endl;
 }
 
 // getter for the total number of accounts

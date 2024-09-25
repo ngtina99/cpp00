@@ -12,17 +12,21 @@
 
 class	PhoneBook 
 {
-	private:
-		Contact	_contact[8];
-		int		_index;
-		int		_contactNumber;
+
 	public:
+
 		PhoneBook();
 		~PhoneBook();
 		void	setPhoneBook();
 		void	getPhoneBook();
 		void	quitPhoneBook();
 		int		checkInput(std::string &argv);
+
+	private:
+
+		Contact	_contact[8];
+		int		_index;
+		int		_contactNumber;
 };
 
 #endif

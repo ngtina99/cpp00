@@ -32,21 +32,15 @@ such that the 9th contact will replace the 1st contact, the 10th will replace th
 // is out of range or wrong, define a relevant behavior. Otherwise, display the
 // contact information, one field per line.
 
-
-// PhoneBook::PhoneBook(){
-// 	this->_limit = false;
-// }
-
 #include "PhoneBook.hpp"
 
 int	main()
 {
 	PhoneBook	phoneBook;
-	std::string	command; //Use the first form when you need a temporary string for immediate use.
-
+	std::string	command;
 	while (1)
 	{
-		std::cout << "Enter a command: ";
+		std::cout << "Enter command: ";
 		std::getline(std::cin, command);
 		
 		phoneBook.quitPhoneBook();

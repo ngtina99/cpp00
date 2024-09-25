@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:39:50 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/24 22:44:02 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/25 23:09:53 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 PhoneBook::PhoneBook() : _index(0), _contactNumber(0)
 {
-	//std::cout << "PhoneBook Constructor called" << std::endl;//think on this or try
 	return ;
 }
 
 PhoneBook::~PhoneBook()
 {
-	//std::cout << "PhoneBook Destructor called" << std::endl;
 	return ;
 }
+
 void	PhoneBook::quitPhoneBook()
 {
 	if (std::cin.eof())
@@ -42,7 +41,27 @@ void	PhoneBook::setPhoneBook()
 	if(this->_index == 8)
 		this->_index = 0;
 }
-void	PhoneBook::getPhoneBook()// TEST
+
+int	PhoneBook::check_args(std::string &argv)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (argv[i])
+	{
+		if (argv[i] < '0' || argv[i] > '9')
+			return (1);
+		if (len >= 10)
+			return (1);
+		len++;
+		i++;
+	}
+	return (0);
+}
+
+void	PhoneBook::getPhoneBook()
 {
 	std::string	input;
 	int	inputNumber = 0;
@@ -51,10 +70,15 @@ void	PhoneBook::getPhoneBook()// TEST
 		std::cout << "The phonebook is empty\n";
 	else
 	{
-		std::cout << "Enter a contact number: ";
+		std::cout << "Enter contact number (1-8): ";
 		std::getline(std::cin, input);
 		PhoneBook::quitPhoneBook();
-		inputNumber = atoi(input.c_str());//something against this 8.0 and stuff
+		if(PhoneBook:: check_args(input))
+		{
+			std::cout << "The number is invalid\n";
+			return ;
+		}
+		inputNumber = atoi(input.c_str());
 		if (inputNumber > this->_contactNumber)
 			std::cout << "There is no contact #" << inputNumber << '\n';
 		else if (inputNumber >= 1 && inputNumber <= 8)
@@ -66,6 +90,6 @@ void	PhoneBook::getPhoneBook()// TEST
 			std::cout << "|-------------------------------------------|" << std::endl;
 		}
 		else
-			std::cout << "The number is invalid\n";
+			std::cout << "The number is out of the range\n";
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:39:50 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/25 23:47:12 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/27 03:00:20 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	PhoneBook::quitPhoneBook()
 {
 	if (std::cin.eof())
 	{
-		std::cout << "\n*End of input*\n";
-		exit (0);
+		std::cerr << "\n*End of input*\n";
+		exit (1);
 	}
 }
 
@@ -83,11 +83,12 @@ void	PhoneBook::getPhoneBook()
 			std::cout << RED << "there is no contact #" << inputNumber << '\n' << EOC;
 		else if (inputNumber >= 1 && inputNumber <= 8)
 		{
-			std::cout << "|-------------------------------------------|" << std::endl;
-			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-			std::cout << "|----------|----------|----------|----------|" << std::endl;
+			std::cout 
+			<< "|-------------------------------------------|\n"
+			<< "|     Index|First Name| Last Name|  Nickname|\n";
+			<< "|----------|----------|----------|----------|\n";
 			this->_contact[inputNumber - 1].getContact(inputNumber);
-			std::cout << "|-------------------------------------------|" << std::endl;
+			<< "|-------------------------------------------|" << std::endl;
 		}
 		else
 			std::cout << RED << "The number is out of the range\n" << EOC;

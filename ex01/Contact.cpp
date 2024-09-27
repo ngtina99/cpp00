@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:40:33 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/26 00:38:33 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/27 02:57:27 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	Contact::quitContact()
 {
 	if (std::cin.eof())
 	{
-		std::cout << "\n*End of input*\n";
+		std::cerr << "\n*End of input*\n";
 		exit (0);
 	}
 }

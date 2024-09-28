@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 00:42:21 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/26 20:46:35 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:35:22 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ Account::Account()
 }
 
 Account::Account(int initial_deposit)
-	: _accountIndex(Account::_nbAccounts++), _amount(initial_deposit), 
+	: _accountIndex(_nbAccounts++), _amount(initial_deposit), 
 	  _nbDeposits(0), _nbWithdrawals(0)
 {
-	Account::_totalAmount += this->_amount;
+	_totalAmount += this->_amount;
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";" 
 	<< "amount:" << this->checkAmount() << ";"
@@ -46,22 +46,22 @@ Account::~Account()
 
 int	Account::getNbAccounts()
 {
-	return (Account::_nbAccounts);
+	return (_nbAccounts);
 }
 
 int	Account::getTotalAmount()
 {
-	return (Account::_totalAmount);
+	return (_totalAmount);
 }
 
 int	Account::getNbDeposits()
 {
-	return (Account::_totalNbDeposits);
+	return (_totalNbDeposits);
 }
 
 int	Account::getNbWithdrawals()
 {
-	return (Account::_totalNbWithdrawals);
+	return (_totalNbWithdrawals);
 }
 
 void	Account::displayAccountsInfos()

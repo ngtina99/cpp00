@@ -1,17 +1,19 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>//library?
-# include <string>
-# include <fstream>
-# include <iomanip>
-# include <cstdlib>
-# include <string>
-
 # include "Contact.hpp"
 
-class	PhoneBook 
-{
+# include <iostream>
+# include <string>
+# include <cstdlib>
+# include <iomanip>
+
+#define BLUE	"\033[34m"
+#define	GREEN	"\033[32m"
+#define RED		"\033[31m"
+#define EOC		"\033[0m"
+
+class	PhoneBook {
 
 	public:
 

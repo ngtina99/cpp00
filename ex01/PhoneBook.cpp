@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:39:50 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/27 03:00:20 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:27:09 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,10 @@ void	PhoneBook::getPhoneBook()
 		{
 			std::cout 
 			<< "|-------------------------------------------|\n"
-			<< "|     Index|First Name| Last Name|  Nickname|\n";
+			<< "|     Index|First Name| Last Name|  Nickname|\n"
 			<< "|----------|----------|----------|----------|\n";
 			this->_contact[inputNumber - 1].getContact(inputNumber);
+			std::cout
 			<< "|-------------------------------------------|" << std::endl;
 		}
 		else

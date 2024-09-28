@@ -17,10 +17,10 @@ class	PhoneBook
 
 		PhoneBook();
 		~PhoneBook();
-		void	setPhoneBook();
-		void	getPhoneBook();
-		void	quitPhoneBook();
-		int		checkInput(std::string &argv);
+		void		setPhoneBook();
+		void		getPhoneBook();
+		static void	quitPhoneBook();
+		int			checkInput(std::string &argv);
 
 	private:
 

@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:40:33 by thuy-ngu          #+#    #+#             */
-/*   Updated: 2024/09/27 02:57:27 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:30:29 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ Contact::~Contact()
 	return ;
 }
 
-void	Contact::quitContact()
-{
-	if (std::cin.eof())
-	{
-		std::cerr << "\n*End of input*\n";
-		exit (0);
-	}
-}
-
 void	Contact::setContact()
 {
 	std::string	input;
@@ -48,7 +39,7 @@ void	Contact::setContact()
 	{
 		std::cout << BLUE << "Enter " << Contact::_title[i] << ": " << EOC;
 		std::getline(std::cin, input);
-		Contact::quitContact();
+		PhoneBook::quitPhoneBook();
 		if (!input.length())
 		{
 			std::cout << RED << "the contact can’t have empty field\n" << EOC;
@@ -57,7 +48,7 @@ void	Contact::setContact()
 		else
 			this->_info[i] = input;
 	}
-	std::cout << GREEN << "Contact added!\n" << EOC;
+	std::cout << GREEN << "Contact added!" << std::endl << EOC;
 }
 
 void	Contact::getContact(int index)
@@ -71,5 +62,5 @@ void	Contact::getContact(int index)
 		else
 			std::cout << BLUE << std::setw(10) << this->_info[i] << EOC;
 	}
-	std::cout << "|\n";
+	std::cout << "|" << std::endl;
 }

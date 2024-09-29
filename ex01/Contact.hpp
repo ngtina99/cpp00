@@ -27,12 +27,11 @@ class Contact {
 		~Contact();
 		void	setContact();
 		void	getContact(int index);
+		static	std::string	_title[5];
 
 	private:
 
 		std::string 		_info[5];
-		static std::string	_title[5];
-
 };
 
 #endif

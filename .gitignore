@@ -1,0 +1,16 @@
+# Ignore object files
+*.o
+
+# Ignore executables (per exercise)
+ex00/megaphone
+ex01/phonebook
+ex02/program_name
+
+# Ignore editor and OS-specific files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore swap and temp files
+*.swp
+*~

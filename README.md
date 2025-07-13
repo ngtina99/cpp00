@@ -30,7 +30,7 @@ make
 
 ```
 
-## 💬 Exercise Descriptions
+## 📝 Exercise Descriptions
 
 - **ex00 — Megaphone:**  
   Prints command-line arguments in uppercase. If no input, prints a loud feedback message.

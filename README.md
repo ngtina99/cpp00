@@ -41,7 +41,7 @@ make
 - **ex02 — The Job Of Your Dreams:**  
   Reimplement a missing `Account.cpp` to match tests and logs, using the provided header file.
 ## 💼 Connect
-If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-tina/)
+If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-tina/) 🙋‍♀️
 
 ## 🖥️ System Compatibility
 This project was developed and tested on Linux (Ubuntu).
